@@ -24,14 +24,14 @@ const rooms: RoomImage[] = [
   },
   {
     src: "/for1.png",
-    alt: "Modern living room",
+    alt: "Modern living room", 
     category: "Living Room",
     title: "Modern Comfort"
   },
   {
     src: "/for1.png",
     alt: "Minimalist dining room",
-    category: "Dining Room",
+    category: "Dining Room", 
     title: "Elegant Dining"
   },
   {
@@ -94,13 +94,16 @@ export function RoomInspiration() {
                   <div key={index} className="flex-[0_0_372px]">
                     <Card className="relative overflow-hidden">
                       <CardContent className="p-0">
-                        <Image
-                          src={room.src}
-                          alt={room.alt}
-                          width={372}
-                          height={486}
-                          className="object-cover"
-                        />
+                        <div className="relative aspect-[372/486] w-full">
+                          <Image
+                            src={room.src}
+                            alt={room.alt}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 372px"
+                            className="object-cover"
+                            priority={index === 0}
+                          />
+                        </div>
                         {selectedIndex === index && (
                           <div className="absolute bottom-6 left-6 right-6 bg-white p-4 rounded-lg">
                             <div className="flex items-center justify-between">
@@ -163,3 +166,6 @@ export function RoomInspiration() {
     </section>
   )
 }
+
+export default RoomInspiration;
+

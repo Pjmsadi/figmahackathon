@@ -1,5 +1,5 @@
 import { products } from '@/components/forth'
-import { ProductCard } from '@/components/ProductCard'
+import ProductCard from '@/components/ProductCard' // Fixed import to default export
 import ProductDetails from '@/components/productDetails'
 import React from 'react'
 
@@ -12,7 +12,10 @@ const Page = () => {
         {products.map((product, index) => (
           <ProductCard 
             key={index}
-            product={product}
+            product={{
+              ...product,
+              image: product.image.src
+            }}
           />
         ))}
       </div>
@@ -20,4 +23,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default Page;

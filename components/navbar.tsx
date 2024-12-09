@@ -10,99 +10,94 @@ import {
   SheetTitle,
 } from "./uifiles/sheet";
 import { Menu } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export const Navbar = () => {
   return (
-    <nav className="w-full border-b-2 border-gray-300 p-4 ">
-      <div className="max-w-7xl mx-auto w-full  flex justify-between">
-        <div className="flex items-center gap-2 ">
-            <img src="Logos-05.svg" alt="" />
+    <nav className="w-full border-b-2 border-gray-300 p-4">
+      <div className="max-w-7xl mx-auto w-full flex justify-between">
+        <Link href="/" className="flex items-center gap-2">
+          <div className="relative w-8 h-8">
+            <Image 
+              src="/Logos-05.svg"
+              alt="Furniro Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
           <h1 className="text-2xl font-bold text-gray-700">
             Furniro
           </h1>
-        </div>
-        <div className="gap-x-24 hidden md:flex items-center justify-center mx-auto ">
-          <a href={"/"} className="text-md font-normal">
+        </Link>
+        <div className="gap-x-24 hidden md:flex items-center justify-center mx-auto">
+          <Link href="/" className="text-md font-normal hover:text-[#B88E2F] transition-colors">
             Home
-          </a>
-          <a href={"/shop"} className="text-md font-normal flex items-center">
+          </Link>
+          <Link href="/shop" className="text-md font-normal hover:text-[#B88E2F] transition-colors">
             Shop
-          </a>
-          <a href={"/blog"} className="text-md font-normal">
+          </Link>
+          <Link href="/blog" className="text-md font-normal hover:text-[#B88E2F] transition-colors">
             Blog
-          </a>
-          <a href={"/contact"} className="text-md font-normal">
+          </Link>
+          <Link href="/contact" className="text-md font-normal hover:text-[#B88E2F] transition-colors">
             Contact
-          </a>
+          </Link>
         </div>
-        <div className=" gap-4 hidden md:flex">
-          <div className="p-2 gap-2 flex ">
-            <span>
-              <User />
-            </span>
-          </div>
-          <Button variant={"outline"} size={"icon"} className="rounded-full">
+        <div className="gap-4 hidden md:flex">
+          <Button variant="ghost" size="icon" className="hover:text-[#B88E2F]">
+            <User />
+          </Button>
+          <Button variant="ghost" size="icon" className="hover:text-[#B88E2F]">
             <Heart />
           </Button>
-          <Button variant={"outline"} size={"icon"} className="rounded-full">
-            <ShoppingCart />
-          </Button>
-          <Button variant={"outline"} size={"icon"} className="rounded-full">
+          <Link href="/cart">
+            <Button variant="ghost" size="icon" className="hover:text-[#B88E2F]">
+              <ShoppingCart />
+            </Button>
+          </Link>
+          <Button variant="ghost" size="icon" className="hover:text-[#B88E2F]">
             <Search />
           </Button>
         </div>
         <Sheet>
           <SheetTrigger className="flex md:hidden">
-            <Button variant={"outline"} size={"icon"}>
-              <Menu className="size-4 text-gray-400" />
+            <Button variant="ghost" size="icon">
+              <Menu className="size-4" />
             </Button>
           </SheetTrigger>
-          <SheetContent side={"right"}>
-            <SheetHeader className="flex items-center">
+          <SheetContent side="right">
+            <SheetHeader>
               <SheetTitle>Furniro</SheetTitle>
             </SheetHeader>
-            <div className=" flex flex-col gap-4 mt-6">
-              <a href={"#"} className="text-md font-normal">
+            <div className="flex flex-col gap-4 mt-6">
+              <Link href="/" className="text-md font-normal hover:text-[#B88E2F] transition-colors">
                 Home
-              </a>
-              <a href={"#"} className="text-md font-normal">
+              </Link>
+              <Link href="/shop" className="text-md font-normal hover:text-[#B88E2F] transition-colors">
                 Shop
-              </a>
-              <a href={"#"} className="text-md font-normal">
-                About
-              </a>
-
-              <a href={"#"} className="text-md font-normal">
+              </Link>
+              <Link href="/blog" className="text-md font-normal hover:text-[#B88E2F] transition-colors">
+                Blog
+              </Link>
+              <Link href="/contact" className="text-md font-normal hover:text-[#B88E2F] transition-colors">
                 Contact
-              </a>
+              </Link>
 
               <div className="mt-4">
-                <div className="p-2 gap-2 flex  ">
-                  <span>
-                    {" "}
-                    <User />
-                  </span>
-                </div>
+                <Button variant="ghost" size="icon" className="hover:text-[#B88E2F]">
+                  <User />
+                </Button>
                 <div className="flex mt-6 gap-4">
-                  <Button
-                    variant={"outline"}
-                    size={"icon"}
-                    className="rounded-full"
-                  >
+                  <Button variant="ghost" size="icon" className="hover:text-[#B88E2F]">
                     <Heart />
                   </Button>
-                  <Button
-                    variant={"outline"}
-                    size={"icon"}
-                    className="rounded-full"
-                  >
-                    <ShoppingCart />
-                  </Button>
-                  <Button
-                    variant={"outline"}
-                    size={"icon"}
-                    className="rounded-full"
-                  >
+                  <Link href="/cart">
+                    <Button variant="ghost" size="icon" className="hover:text-[#B88E2F]">
+                      <ShoppingCart />
+                    </Button>
+                  </Link>
+                  <Button variant="ghost" size="icon" className="hover:text-[#B88E2F]">
                     <Search />
                   </Button>
                 </div>
@@ -114,4 +109,5 @@ export const Navbar = () => {
     </nav>
   );
 };
+
 export default Navbar;

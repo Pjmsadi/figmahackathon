@@ -4,8 +4,8 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Furniture Store", // More descriptive title
-  description: "Premium furniture store with high quality products", // More descriptive description
+  title: "Funiro - Premium Furniture Store",
+  description: "Discover our curated collection of high-quality furniture for your home. Modern designs, exceptional comfort, and superior craftsmanship.",
 };
 
 export default function RootLayout({

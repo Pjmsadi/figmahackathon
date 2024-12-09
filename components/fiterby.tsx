@@ -1,3 +1,5 @@
+'use client'
+
 import { Grid2X2, List, SlidersHorizontal } from 'lucide-react'
 import { Button } from "./uifiles/button"
 import {
@@ -7,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./uifiles/select"
-
+import Image from 'next/image'
 
 export function FilterBar() {
   return (
@@ -72,4 +74,6 @@ export function FilterBar() {
     </div>
   )
 }
+
+export default FilterBar;
 

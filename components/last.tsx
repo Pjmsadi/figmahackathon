@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 const Last = () => {
   return (
-    <div>
+    <div className="relative w-full aspect-[1799/780]">
       <Image 
-        height={780} 
-        width={1799} 
-        className='bg-center'
-        alt="logo" 
-        src='/Share.png'
+        fill
+        className="object-cover"
+        alt="Share section image" 
+        src="/Share.png"
+        sizes="100vw"
         priority
       />
     </div>

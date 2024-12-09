@@ -3,6 +3,7 @@
 import { HeroHeader } from "@/components/hero-header";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface CartItem {
   id: number;
@@ -56,7 +57,7 @@ const Page = () => {
       <HeroHeader
         backgroundImage="/Rectangle 1.png"
         breadcrumbItems={[
-          { href: "/", label: "home" },
+          { href: "/", label: "Home" },
           { href: "/cart", label: "Cart" },
         ]}
         title="Cart"
@@ -146,9 +147,31 @@ const Page = () => {
                   <span>Total</span>
                   <span>Rs. {subtotal.toLocaleString()}</span>
                 </div>
-                <button className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800">
-                  Check Out
-                </button>
+                <Link href="/checkout">
+                  <button className="w-full bg-[#B88E2F] text-white py-3 rounded-lg hover:bg-[#9c7829] transition-colors">
+                    Check Out
+                  </button>
+                </Link>
+              </div>
+
+              {/* Features */}
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                <div className="bg-white p-4 rounded-lg text-center">
+                  <h3 className="font-semibold mb-2">High Quality</h3>
+                  <p className="text-sm text-gray-600">crafted from top materials</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg text-center">
+                  <h3 className="font-semibold mb-2">Warranty Protection</h3>
+                  <p className="text-sm text-gray-600">Over 2 years</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg text-center">
+                  <h3 className="font-semibold mb-2">Free Shipping</h3>
+                  <p className="text-sm text-gray-600">Order over 150 $</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg text-center">
+                  <h3 className="font-semibold mb-2">24 / 7 Support</h3>
+                  <p className="text-sm text-gray-600">Dedicated support</p>
+                </div>
               </div>
             </div>
           </div>
@@ -156,9 +179,11 @@ const Page = () => {
       </div>
       <div className="relative w-full h-[270px]">
         <Image 
-          fill
-          alt="footer banner"
           src="/fr.png"
+          alt="footer banner"
+          fill
+          sizes="100vw"
+          priority
           className="object-cover"
         />
       </div>

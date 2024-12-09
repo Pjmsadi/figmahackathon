@@ -17,7 +17,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = () => {
       <div className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg p-4 sm:p-8">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-6">
-          <span>Home</span> &gt; <span>Shop</span> &gt; <span className="text-black">Asgaard sofa</span>
+          <span>Home</span> &gt; <span>Shop</span> &gt; <span className="text-black">Asgaard Sofa</span>
         </nav>
 
         {/* Main Content */}
@@ -28,16 +28,21 @@ const ProductDetails: React.FC<ProductDetailsProps> = () => {
               <Image
                 src="/sofa1.png"
                 alt="Asgaard Sofa"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={90}
+                priority
                 fill
                 className="rounded-lg object-cover"
               />
             </div>
             <div className="flex space-x-2 justify-center lg:justify-start">
-              {["/sofa1.png", "/sofa2.png", "/sofa4.png"].map((src, index) => (
+              {["/sofa1.png", "/sofa2.png", "/sofa3.png"].map((src, index) => (
                 <div key={index} className="relative w-16 h-16 sm:w-20 sm:h-20">
                   <Image
                     src={src}
                     alt={`Thumbnail ${index + 1}`}
+                    sizes="(max-width: 768px) 80px, 100px"
+                    quality={80}
                     fill
                     className="bg-white rounded-lg object-cover"
                   />
@@ -63,7 +68,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = () => {
             </div>
             <p className="text-gray-700 text-sm sm:text-base mb-4">
               Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted
-              hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.
+              hero with a well-balanced audio that boasts a clear midrange and extended highs for a sound.
             </p>
 
             {/* Size Options */}
@@ -112,7 +117,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = () => {
                   +
                 </button>
               </div>
-              <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 w-full sm:w-auto">
+              <button className="px-6 py-3 bg-[#B88E2F] text-white rounded-lg hover:bg-[#B88E2F]/90 w-full sm:w-auto">
                 Add to Cart
               </button>
               <button className="px-6 py-3 border rounded-lg text-gray-700 hover:bg-gray-200 w-full sm:w-auto">

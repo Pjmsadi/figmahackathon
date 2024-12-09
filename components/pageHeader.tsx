@@ -1,5 +1,6 @@
 'use client'
 
+import Image from "next/image"
 import { Grid2X2, List, SlidersHorizontal } from 'lucide-react'
 import { Button } from "./uifiles/button"
 import {
@@ -16,7 +17,6 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "./uifiles/breadcrumb"
-import { HeroSection } from "./hero-section"
 
 interface ShopHeaderProps {
   title: string
@@ -31,6 +31,7 @@ interface ShopHeaderProps {
   showOptions?: Array<number>
   sortOptions?: Array<{ value: string; label: string }>
   className?: string
+  backgroundImage: string
 }
 
 export function ShopHeader({
@@ -52,6 +53,7 @@ export function ShopHeader({
     { value: "name-desc", label: "Name: Z to A" },
   ],
   className = "",
+  backgroundImage,
 }: ShopHeaderProps) {
   const startResult = (currentPage - 1) * resultsPerPage + 1
   const endResult = Math.min(currentPage * resultsPerPage, totalResults)
@@ -59,7 +61,36 @@ export function ShopHeader({
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <HeroSection title={title} breadcrumbItems={breadcrumbItems} className={className} />
+      <div className={`relative h-[200px] md:h-[300px] overflow-hidden ${className}`}>
+        <Image
+          src={backgroundImage}
+          alt={title}
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-white">{title}</h1>
+          <nav aria-label="Breadcrumb">
+            <ol className="flex items-center space-x-2">
+              {breadcrumbItems.map((item, index) => (
+                <li key={item.href} className="flex items-center">
+                  {index > 0 && (
+                    <span className="mx-2 text-white opacity-50">/</span>
+                  )}
+                  <a 
+                    href={item.href}
+                    className="text-white hover:text-white/80"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </div>
+      </div>
 
       {/* Filter Bar */}
       <div className="px-4 py-6 flex flex-col md:flex-row md:items-center justify-between gap-4 bg-neutral-50">

@@ -2,8 +2,8 @@ import Hero from "@/components/hero";
 import Mid from "@/components/mid";
 import Forth from "@/components/forth";
 import { RoomInspiration } from "@/components/fifth";
-import Image from "next/image";
 import Last from "@/components/last";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -14,7 +14,14 @@ export default function Home() {
       <RoomInspiration />
       <Last />
       <div className="relative w-full h-[270px]">
-        <Image src="/fr.png" alt="footer banner" fill sizes="100vw" priority className="object-cover" />
+        <Image
+          src="/fr.png"
+          alt="footer banner"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover"
+        />
       </div>
     </main>
   );

@@ -36,10 +36,11 @@ export function ProductCard({
     <Card className="group overflow-hidden">
       <div className="relative aspect-square">
         <Image
-          src={product.image}
+          src={product.image.endsWith('.png') ? product.image : `${product.image}.png`} // Ensure image is in PNG format
           alt={product.name}
-          fill
-          className="object-cover transition-transform group-hover:scale-105"
+          width={400}
+          height={400}
+          className="object-cover w-full h-full transition-transform group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-opacity duration-300 flex flex-col items-center justify-center gap-2">
           <Button 

@@ -1,5 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
+import { FaHome, FaChevronRight } from 'react-icons/fa';
+
 
 interface BreadcrumbItem {
   href: string
@@ -25,8 +27,10 @@ export function HeroHeader({
         src={backgroundImage}
         alt={title}
         fill
-        className="object-cover"
+        sizes="100vw"
+        quality={90}
         priority
+        className="object-cover"
       />
       <div className="absolute inset-0 bg-black bg-opacity-40" />
       <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4">
@@ -54,4 +58,3 @@ export function HeroHeader({
 }
 
 export default HeroHeader;
-

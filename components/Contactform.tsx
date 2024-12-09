@@ -1,13 +1,12 @@
 "use client"
+
 import React, { useState } from "react";
-import { CiLocationOn } from "react-icons/ci";
-import { FaPhoneAlt } from "react-icons/fa";
-import { IoTimeSharp } from "react-icons/io5";
 import { Button } from "./uifiles/button";
+import Image from "next/image";
 
 interface FormData {
   name: string;
-  email: string; 
+  email: string;
   subject: string;
   message: string;
 }
@@ -16,7 +15,7 @@ const ContactForm = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
-    subject: "",
+    subject: "", 
     message: "",
   });
 
@@ -27,7 +26,6 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Add actual form submission logic here
       console.log(formData);
       setFormData({
         name: "",
@@ -47,15 +45,29 @@ const ContactForm = () => {
         <div className="space-y-6">
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
-              <CiLocationOn size={32} className="text-gray-700" />
+              <div className="relative w-8 h-8">
+                <Image 
+                  src="/location-icon.svg"
+                  alt="Location icon"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <div>
                 <p className="font-medium text-gray-800">Address</p>
-                <p className="text-gray-600">236 5th SE Avenue, New York<br/>NY10000, United States</p>
+                <p className="text-gray-600">400 University Drive Suite 200 Coral Gables,<br/>FL 33134 USA</p>
               </div>
             </div>
 
             <div className="flex items-center space-x-4">
-              <FaPhoneAlt size={32} className="text-gray-700" />
+              <div className="relative w-8 h-8">
+                <Image 
+                  src="/phone-icon.svg"
+                  alt="Phone icon"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <div>
                 <p className="font-medium text-gray-800">Phone</p>
                 <p className="text-gray-600">Mobile: +(84) 546-6789<br/>Hotline: +(84) 456-6789</p>
@@ -63,7 +75,14 @@ const ContactForm = () => {
             </div>
 
             <div className="flex items-center space-x-4">
-              <IoTimeSharp size={32} className="text-gray-700" />
+              <div className="relative w-8 h-8">
+                <Image 
+                  src="/time-icon.svg"
+                  alt="Time icon"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <div>
                 <p className="font-medium text-gray-800">Working Time</p>
                 <p className="text-gray-600">Monday-Friday: 9:00 - 22:00<br/>Saturday-Sunday: 9:00 - 21:00</p>
@@ -76,30 +95,30 @@ const ContactForm = () => {
         <div className="bg-white shadow-md p-8 rounded-md">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Your Name</label>
+              <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Your name</label>
               <input
                 id="name"
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Enter your name"
+                placeholder="Abc"
                 required
-                className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-gray-500 focus:outline-none"
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-[#B88E2F] focus:outline-none"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email Address</label>
+              <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email address</label>
               <input
                 id="email"
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="Enter your email"
+                placeholder="Abc@def.com"
                 required
-                className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-gray-500 focus:outline-none"
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-[#B88E2F] focus:outline-none"
               />
             </div>
 
@@ -111,9 +130,8 @@ const ContactForm = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                placeholder="Enter the subject"
-                required
-                className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-gray-500 focus:outline-none"
+                placeholder="This is an optional"
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-[#B88E2F] focus:outline-none"
               />
             </div>
 
@@ -124,17 +142,17 @@ const ContactForm = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Write your message"
+                placeholder="Hi! i'd like to ask about"
                 rows={5}
                 required
-                className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-gray-500 focus:outline-none"
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-[#B88E2F] focus:outline-none"
               />
             </div>
 
             <div>
               <Button
                 type="submit"
-                className="w-full bg-yellow-500 text-white font-medium hover:bg-yellow-600 transition"
+                className="w-full bg-[#B88E2F] text-white font-medium hover:bg-[#B88E2F]/80 transition"
               >
                 Submit
               </Button>

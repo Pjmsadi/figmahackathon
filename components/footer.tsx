@@ -1,6 +1,7 @@
 'use client'
 
 import React from "react";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
     return (
@@ -8,7 +9,17 @@ const Footer: React.FC = () => {
             <div className="flex flex-wrap justify-between gap-6">
                 {/* Company Info */}
                 <section className="w-[14rem]">
-                    <h2 className="font-bold text-2xl">Funiro.</h2>
+                    <div className="flex items-center gap-2 mb-4">
+                        <div className="relative w-8 h-8">
+                            <Image 
+                                src="/Logos-05.svg"
+                                alt="Funiro Logo"
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+                        <h2 className="font-bold text-2xl">Funiro.</h2>
+                    </div>
                     <p className="text-gray-700">
                         400 University Drive Suite 200 Coral Gables, FL 33134 USA
                     </p>

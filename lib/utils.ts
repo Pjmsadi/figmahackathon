@@ -37,5 +37,6 @@ export {
   cn,
   formatPrice,
   formatDate,
-  formatRating
+  formatRating,
 }
+

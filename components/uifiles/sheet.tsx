@@ -138,3 +138,4 @@ export {
   SheetTitle,
   SheetDescription,
 }
+export default Sheet;
