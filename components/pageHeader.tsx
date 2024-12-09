@@ -1,21 +1,21 @@
 'use client'
 
 import { Grid2X2, List, SlidersHorizontal } from 'lucide-react'
-import { Button } from "@/components/ui/button"
+import { Button } from "./uifiles/button"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "./uifiles/select"
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+} from "./uifiles/breadcrumb"
 import { HeroSection } from "./hero-section"
 
 interface ShopHeaderProps {
@@ -98,7 +98,7 @@ export function ShopHeader({
             <span className="text-sm whitespace-nowrap">Show:</span>
             <Select
               defaultValue={String(resultsPerPage)}
-              onValueChange={(value) => onResultsPerPageChange(Number(value))}
+              onValueChange={(value: string) => onResultsPerPageChange(Number(value))}
             >
               <SelectTrigger className="w-[70px]">
                 <SelectValue />
@@ -136,4 +136,4 @@ export function ShopHeader({
     </div>
   )
 }
-
+export default ShopHeader;

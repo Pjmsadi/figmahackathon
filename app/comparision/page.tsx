@@ -12,7 +12,7 @@ interface CartItem {
   image: string;
 }
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <HeroHeader
@@ -38,22 +38,28 @@ const page = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Product Cards */}
             <div className="bg-white shadow-md rounded-lg p-4">
-              <img
-                src="/path-to-image-1.jpg" // Replace with product image
-                alt="Asgard Sofa"
-                className="rounded-lg w-full mb-4"
-              />
-              <h3 className="font-semibold text-lg">Asgard Sofa</h3>
+              <div className="relative w-full h-48">
+                <Image
+                  src="/sofa1.png"
+                  alt="Asgard Sofa"
+                  fill
+                  className="rounded-lg object-cover"
+                />
+              </div>
+              <h3 className="font-semibold text-lg mt-4">Asgard Sofa</h3>
               <p className="text-gray-600">Rs. 250,000.00</p>
               <p className="text-yellow-500 text-sm mt-1">⭐⭐⭐⭐⭐ (4.7)</p>
             </div>
             <div className="bg-white shadow-md rounded-lg p-4">
-              <img
-                src="/path-to-image-2.jpg" // Replace with product image
-                alt="Outdoor Sofa Set"
-                className="rounded-lg w-full mb-4"
-              />
-              <h3 className="font-semibold text-lg">Outdoor Sofa Set</h3>
+              <div className="relative w-full h-48">
+                <Image
+                  src="/sofa2.png"
+                  alt="Outdoor Sofa Set"
+                  fill
+                  className="rounded-lg object-cover"
+                />
+              </div>
+              <h3 className="font-semibold text-lg mt-4">Outdoor Sofa Set</h3>
               <p className="text-gray-600">Rs. 224,000.00</p>
               <p className="text-yellow-500 text-sm mt-1">⭐⭐⭐⭐⭐ (4.2)</p>
             </div>
@@ -108,18 +114,21 @@ const page = () => {
                   <td className="p-4">1 Year Manufacturing Warranty</td>
                   <td className="p-4">12 Year Manufacturing Warranty</td>
                 </tr>
-                {/* Add More Rows as Needed */}
               </tbody>
             </table>
           </div>
         </div>
       </div>
-      <div>
-                <Image height={270} width={1440} alt="logo" src="/fr.png" />
-                </div>
+      <div className="relative w-full h-[270px]">
+        <Image
+          fill
+          alt="footer banner"
+          src="/fr.png"
+          className="object-cover"
+        />
+      </div>
     </div>
-    // </div>
   );
 };
 
-export default page;
+export default Page;

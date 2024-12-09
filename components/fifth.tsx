@@ -5,8 +5,8 @@ import Image from "next/image"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import useEmblaCarousel from "embla-carousel-react"
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "./uifiles/button"
+import { Card, CardContent } from "./uifiles/card"
 
 interface RoomImage {
   src: string
@@ -163,4 +163,3 @@ export function RoomInspiration() {
     </section>
   )
 }
-

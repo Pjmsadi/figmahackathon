@@ -1,14 +1,14 @@
 import { Heart, Search, ShoppingCart } from "lucide-react";
 import { User } from "lucide-react";
 import React from "react";
-import { Button } from "./ui/button";
+import { Button } from "./uifiles/button";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
   SheetHeader,
   SheetTitle,
-} from "./ui/sheet";
+} from "./uifiles/sheet";
 import { Menu } from "lucide-react";
 
 export const Navbar = () => {

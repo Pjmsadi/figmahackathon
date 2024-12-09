@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import Image from "next/image";
 
@@ -8,16 +10,16 @@ const BlogLayout = () => {
       title: "Going all-in with millennial design",
       category: "Wood",
       date: "14 Oct 2022",
-      image: "https://via.placeholder.com/600x300", // Replace with actual image
+      image: "/blog1.jpg", // Replace with actual image in public folder
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
       id: 2,
-      title: "Exploring new ways of decorating",
+      title: "Exploring new ways of decorating", 
       category: "Handmade",
       date: "14 Oct 2022",
-      image: "https://via.placeholder.com/600x300", // Replace with actual image
+      image: "/blog2.jpg", // Replace with actual image in public folder
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
@@ -34,7 +36,7 @@ const BlogLayout = () => {
   const recentPosts = [
     "Going all-in with millennial design",
     "Exploring new ways of decorating",
-    "Handmade pieces that took time to make",
+    "Handmade pieces that took time to make", 
     "Modern home in Milan",
     "Colorful office redesign",
   ];
@@ -50,11 +52,14 @@ const BlogLayout = () => {
                 key={post.id}
                 className="bg-white rounded-lg shadow-md overflow-hidden"
               >
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-56 object-cover"
-                />
+                <div className="relative w-full h-56">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div className="p-6">
                   <div className="flex items-center text-sm text-gray-500 space-x-3">
                     <span>Admin</span>
@@ -109,7 +114,7 @@ const BlogLayout = () => {
                 {recentPosts.map((post, index) => (
                   <li
                     key={index}
-                    className="text-sm text-gray-600 hover:underline"
+                    className="text-sm text-gray-600 hover:underline cursor-pointer"
                   >
                     {post}
                   </li>
@@ -128,9 +133,14 @@ const BlogLayout = () => {
           </div>
         </div>
       </div>
-      <div>
-                <Image height={270} width={1440} alt="logo" src="/fr.png" />
-                </div>
+      <div className="relative w-full h-[270px]">
+        <Image 
+          fill
+          alt="footer banner" 
+          src="/fr.png"
+          className="object-cover"
+        />
+      </div>
     </div>
   );
 };

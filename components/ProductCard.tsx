@@ -2,8 +2,8 @@
 
 import { Heart, Share2, Scale, ShoppingCart } from 'lucide-react'
 import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "./uifiles/card"
+import { Button } from "./uifiles/button"
 
 export interface Product {
   name: string
@@ -93,3 +93,4 @@ export function ProductCard({
   )
 }
 
+export default ProductCard;

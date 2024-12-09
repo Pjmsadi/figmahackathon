@@ -1,12 +1,13 @@
 import { Grid2X2, List, SlidersHorizontal } from 'lucide-react'
-import { Button } from "@/components/ui/button"
+import { Button } from "./uifiles/button"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "./uifiles/select"
+
 
 export function FilterBar() {
   return (

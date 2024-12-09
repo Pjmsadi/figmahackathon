@@ -12,7 +12,7 @@ interface CartItem {
   image: string;
 }
 
-const page = () => {
+const Page = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([
     {
       id: 1,
@@ -50,6 +50,7 @@ const page = () => {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
+
   return (
     <div>
       <HeroHeader
@@ -80,10 +81,12 @@ const page = () => {
                     {cartItems.map((item) => (
                       <tr key={item.id} className="border-b">
                         <td className="p-4 flex items-center space-x-4">
-                          <img
+                          <Image
                             src={item.image}
                             alt={item.name}
-                            className="w-16 h-16 rounded-lg"
+                            width={64}
+                            height={64}
+                            className="rounded-lg"
                           />
                           <span className="text-gray-700">{item.name}</span>
                         </td>
@@ -151,11 +154,16 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div>
-                <Image height={270} width={1440} alt="logo" src="/fr.png" />
-                </div>
+      <div className="relative w-full h-[270px]">
+        <Image 
+          fill
+          alt="footer banner"
+          src="/fr.png"
+          className="object-cover"
+        />
+      </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

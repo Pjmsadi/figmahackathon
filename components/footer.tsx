@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 
 const Footer: React.FC = () => {
@@ -16,10 +18,10 @@ const Footer: React.FC = () => {
                 <nav>
                     <h4 className="font-semibold text-lg">Navbar</h4>
                     <ul className="space-y-2 text-gray-600">
-                        <li>Home</li>
-                        <li>Shop</li>
-                        <li>About</li>
-                        <li>Contact</li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/shop">Shop</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </nav>
 
@@ -27,25 +29,26 @@ const Footer: React.FC = () => {
                 <nav>
                     <h4 className="font-semibold text-lg">Help</h4>
                     <ul className="space-y-2 text-gray-600">
-                        <li>Payment Option</li>
-                        <li>Returns</li>
-                        <li>Privacy Policies</li>
+                        <li><a href="/payment">Payment Option</a></li>
+                        <li><a href="/returns">Returns</a></li>
+                        <li><a href="/privacy">Privacy Policies</a></li>
                     </ul>
                 </nav>
 
                 {/* Newsletter */}
                 <section>
                     <h4 className="font-semibold text-lg">Newsletter</h4>
-                    <form className="flex flex-col gap-2">
+                    <form className="flex flex-col gap-2" onSubmit={(e) => e.preventDefault()}>
                         <input
                             type="email"
                             placeholder="Your Email"
                             className="border rounded p-2"
                             aria-label="Your Email"
+                            required
                         />
                         <button
                             type="submit"
-                            className="bg-black text-white font-bold p-2 rounded"
+                            className="bg-black text-white font-bold p-2 rounded hover:bg-gray-800 transition-colors"
                         >
                             SUBSCRIBE
                         </button>
@@ -56,7 +59,7 @@ const Footer: React.FC = () => {
             {/* Footer Bottom */}
             <div className="mt-5 text-center">
                 <hr className="border-gray-300 mb-3" />
-                <p className="text-gray-600">2023 Funiro. All rights reserved.</p>
+                <p className="text-gray-600">&copy; {new Date().getFullYear()} Funiro. All rights reserved.</p>
             </div>
         </footer>
     );
