@@ -1,6 +1,9 @@
+import { Icon } from "@radix-ui/react-select"
+import { Import, ImportIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { FaHome, FaChevronRight } from 'react-icons/fa';
+import { JSX } from "react"
+
 
 
 interface BreadcrumbItem {
@@ -15,12 +18,23 @@ interface HeroHeaderProps {
   className?: string
 }
 
+/**
+ * HeroHeader component renders a hero section with a background image, title, and breadcrumb navigation.
+ *
+ * @param {Object} props - The properties object.
+ * @param {string} props.title - The title to display in the hero section.
+ * @param {Array} props.breadcrumbItems - An array of breadcrumb items, each containing `href` and `label`.
+ * @param {string} props.backgroundImage - The URL of the background image.
+ * @param {string} [props.className] - Additional CSS classes to apply to the hero section.
+ *
+ * @returns {JSX.Element} The rendered hero header component.
+ */
 export function HeroHeader({
   title,
   breadcrumbItems,
   backgroundImage,
   className = "",
-}: HeroHeaderProps) {
+}: HeroHeaderProps): JSX.Element {
   return (
     <div className={`relative h-[200px] md:h-[300px] overflow-hidden ${className}`}>
       <Image

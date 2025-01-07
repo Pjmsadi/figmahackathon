@@ -74,11 +74,11 @@ export const products = [
 
 const Forth = () => {
   return (
-    <div className="my-8 flex items-center flex-col max-w-7xl w-full">
-      <h1 className="mt-2 mb-2 font-bold text-3xl flex justify-center items-center">
+    <div className="my-8 flex items-center flex-col max-w-7xl w-full px-4">
+      <h1 className="mt-2 mb-2 font-bold text-3xl flex justify-center items-center text-center">
         Our Products
       </h1>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product, index) => (
           <ProductCard 
             key={index} 

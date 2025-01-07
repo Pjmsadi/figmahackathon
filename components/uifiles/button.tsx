@@ -40,6 +40,18 @@ export interface ButtonProps
   asChild?: boolean
 }
 
+/**
+ * A forward-ref Button component that can render either a button element or a custom component.
+ *
+ * @param {string} className - Additional class names to apply to the button.
+ * @param {string} variant - The variant of the button, which determines its styling.
+ * @param {string} size - The size of the button.
+ * @param {boolean} [asChild=false] - If true, renders a custom component instead of a button element.
+ * @param {React.Ref<HTMLButtonElement>} ref - The ref to be forwarded to the button element.
+ * @param {object} props - Additional props to be spread onto the button element.
+ *
+ * @returns {JSX.Element} The rendered button component.
+ */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"

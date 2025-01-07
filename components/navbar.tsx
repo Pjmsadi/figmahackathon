@@ -43,6 +43,9 @@ export const Navbar = () => {
           <Link href="/contact" className="text-md font-normal hover:text-[#B88E2F] transition-colors">
             Contact
           </Link>
+          <Link href="/about" className="text-md font-normal hover:text-[#B88E2F] transition-colors">
+            About
+          </Link>
         </div>
         <div className="gap-4 hidden md:flex">
           <Button variant="ghost" size="icon" className="hover:text-[#B88E2F]">
@@ -82,6 +85,9 @@ export const Navbar = () => {
               </Link>
               <Link href="/contact" className="text-md font-normal hover:text-[#B88E2F] transition-colors">
                 Contact
+              </Link>
+              <Link href="/about" className="text-md font-normal hover:text-[#B88E2F] transition-colors">
+                About
               </Link>
 
               <div className="mt-4">

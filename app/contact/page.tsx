@@ -1,9 +1,9 @@
 "use client";
 
-import ContactForm from '@/components/Contactform'; // Corrected casing in import name
-import { HeroHeader } from '@/components/hero-header';
+import { HeroHeader } from "@/components/hero-header";
 import React from 'react';
 import Image from 'next/image';
+import ContactForm from '@/components/ContactForm'; // Corrected casing in import name
 import { FaMapMarkerAlt, FaPhoneAlt, FaClock, FaEnvelope } from 'react-icons/fa';
 
 const contactInfo = [

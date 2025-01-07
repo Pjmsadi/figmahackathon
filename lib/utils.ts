@@ -39,4 +39,6 @@ export {
   formatDate,
   formatRating,
 }
-
+export const getImageUrl = (imagePath: string) => {
+  return `${process.env.BASE_URL}/images/${imagePath}`
+}

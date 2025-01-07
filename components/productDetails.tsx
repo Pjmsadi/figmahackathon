@@ -33,6 +33,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = () => {
                 priority
                 fill
                 className="rounded-lg object-cover"
+                width={500}
+                height={500}
               />
             </div>
             <div className="flex space-x-2 justify-center lg:justify-start">

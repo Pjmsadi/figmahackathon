@@ -5,7 +5,7 @@ const Last = () => {
   return (
     <div className="relative w-full aspect-[1799/780]">
       <Image 
-        fill
+        fill={true}
         className="object-cover"
         alt="Share section image" 
         src="/Share.png"
